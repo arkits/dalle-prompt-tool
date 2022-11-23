@@ -4,30 +4,13 @@ import PromptModifierOptions from "../components/PromptModifierOptions";
 import * as libmodifiers from "../lib/modifiers";
 import { PromptInput } from "../components/PromptInput";
 import { Header } from "../components/Header";
+import { OptimizePrompt } from "../components/OptimizePrompt";
 
 export default function Home() {
   const [prompt, setPrompt] = useState("");
   const [modifiers, setModifiers] = useState({
     ...libmodifiers.default,
   });
-
-  const optimizePrompt = () => {
-    if (!prompt || prompt === "") {
-      return;
-    }
-
-    let optimizedPrompt = prompt;
-
-    for (const modifier of Object.values(modifiers)) {
-      if (modifier.selectedOption?.name) {
-        optimizedPrompt = optimizedPrompt.concat(
-          `${modifier.template} ${modifier.selectedOption.name}`
-        );
-      }
-    }
-
-    return `${optimizedPrompt}`;
-  };
 
   return (
     <div className="container mx-auto px-4">
@@ -52,12 +35,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="box-border p-4 rounded-lg bg-emerald-700">
-            <h2 className="text-xl pb-2 text-white">Optimized Prompt</h2>
-            <h1 className="text-3xl text-white select-all mb-2">
-              {optimizePrompt()}
-            </h1>
-          </div>
+          <OptimizePrompt prompt={prompt} modifiers={modifiers} />
         </div>
       </main>
     </div>
