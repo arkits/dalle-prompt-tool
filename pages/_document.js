@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <title>DALL-E 2 Prompt Tool</title>
         <meta name="description" content="DALL-E 2 Prompt Tool" />
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -18,7 +17,7 @@ export default function Document() {
           content="dalle, DALL-E 2, prompt, tool, optimizer, engineering"
         />
       </Head>
-      <body className="antialiased bg-amber-50">
+      <body className="bg-amber-50">
         <Main />
         <NextScript />
       </body>
