@@ -7,21 +7,23 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Select({ name, options, selected, setSelected }) {
+export default function Select({
+  name,
+  options,
+  selected,
+  setSelected,
+  noneAvatar,
+}) {
   return (
     <div className="flex flex-col">
       <Listbox value={selected} onChange={setSelected}>
         {({ open }) => (
           <>
-            <Listbox.Label className="block text-sm font-medium text-gray-700">
-              {name}
-            </Listbox.Label>
-
             <div className="relative mt-1">
               <Listbox.Button className="relative w-full cursor-default rounded-md border border-gray-300 bg-white py-2 pl-3 pr-10 text-left shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm">
                 <span className="flex items-center">
                   <img
-                    src={selected?.avatar}
+                    src={selected?.avatar || noneAvatar}
                     width={256}
                     height={256}
                     className="h-6 w-6 flex-shrink-0 rounded-full"
@@ -62,7 +64,7 @@ export default function Select({ name, options, selected, setSelected }) {
                           <div className="flex items-center">
                             <Image
                               src={option?.avatar}
-                              alt=""
+                              alt={option?.name}
                               width={256}
                               height={256}
                               className="h-6 w-6 flex-shrink-0 rounded-full"
@@ -73,7 +75,7 @@ export default function Select({ name, options, selected, setSelected }) {
                                 "ml-3 block truncate"
                               )}
                             >
-                              {option.name}
+                              {option?.name}
                             </span>
                           </div>
 
@@ -102,12 +104,14 @@ export default function Select({ name, options, selected, setSelected }) {
                         "relative cursor-default select-none py-2 pl-3 pr-9"
                       )
                     }
-                    value={null}
+                    value={{}}
                   >
                     {({ selected, active }) => (
                       <>
                         <div className="flex items-center">
                           <Image
+                            alt={"None"}
+                            src={noneAvatar}
                             width={256}
                             height={256}
                             className="h-6 w-6 flex-shrink-0 rounded-full"

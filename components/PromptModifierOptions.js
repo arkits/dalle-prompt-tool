@@ -24,6 +24,7 @@ export function ModifierOption({ modifier, setModifiers, modifiers }) {
       <Select
         name={modifier?.name}
         options={modifier?.options}
+        noneAvatar={modifier?.avatar}
         selected={selected}
         setSelected={setSelected}
       />
