@@ -17,7 +17,7 @@ export default function Document() {
           content="dalle, DALL-E 2, prompt, tool, optimizer, engineering"
         />
       </Head>
-      <body className="bg-amber-50">
+      <body className="bg-gradient-to-br from-amber-50 to-yellow-50">
         <Main />
         <NextScript />
       </body>
