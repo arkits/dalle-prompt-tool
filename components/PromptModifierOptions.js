@@ -35,9 +35,8 @@ export function ModifierOption({ modifier, setModifiers, modifiers }) {
 export default function PromptModifierOptions({ modifiers, setModifiers }) {
   const modifierOptions = Object.values(modifiers).map((modifier, idx) => {
     return (
-      <div className="col-span-4 md:col-span-1">
+      <div key={idx} className="col-span-4 md:col-span-1">
         <ModifierOption
-          key={idx}
           modifier={modifier}
           setModifiers={setModifiers}
           modifiers={modifiers}
