@@ -35,18 +35,16 @@ export function ModifierOption({ modifier, setModifiers, modifiers }) {
 export default function PromptModifierOptions({ modifiers, setModifiers }) {
   const modifierOptions = Object.values(modifiers).map((modifier, idx) => {
     return (
-      <ModifierOption
-        key={idx}
-        modifier={modifier}
-        setModifiers={setModifiers}
-        modifiers={modifiers}
-      />
+      <div className="col-span-4 md:col-span-1">
+        <ModifierOption
+          key={idx}
+          modifier={modifier}
+          setModifiers={setModifiers}
+          modifiers={modifiers}
+        />
+      </div>
     );
   });
 
-  return (
-    <div className="grid pt-4 gap-4 grid-cols-3 grid-rows-3">
-      {modifierOptions}
-    </div>
-  );
+  return <div className="grid gap-4 grid-cols-4">{modifierOptions}</div>;
 }

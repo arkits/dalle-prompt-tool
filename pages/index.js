@@ -1,33 +1,9 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import PromptModifierOptions from "../components/PromptModifierOptions";
 import * as libmodifiers from "../lib/modifiers";
-
-function PromptInput({ prompt, setPrompt }) {
-  return (
-    <div className="mb-10">
-      <form>
-        <input
-          className="form-input rounded pt-2 pb-2 w-full"
-          placeholder="Enter your prompt here..."
-          autoFocus
-          value={prompt}
-          onChange={(e) => {
-            setPrompt(e.target.value);
-          }}
-        ></input>
-      </form>
-    </div>
-  );
-}
-
-function Header() {
-  return (
-    <div className="mt-10 mb-10 flex self-center">
-      <h1 className="text-lg">DALL-E 2 Prompt Tool</h1>
-    </div>
-  );
-}
+import { PromptInput } from "../components/PromptInput";
+import { Header } from "../components/Header";
 
 export default function Home() {
   const [prompt, setPrompt] = useState("");
@@ -54,7 +30,7 @@ export default function Home() {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4">
       <Head>
         <title>DALLE2 Prompt Tool</title>
         <meta name="description" content="DALLE2 Prompt Tool" />
@@ -66,14 +42,22 @@ export default function Home() {
           <Header />
           <PromptInput prompt={prompt} setPrompt={setPrompt} />
 
-          <h2 className="text-xl pb-2">Modifiers</h2>
-          <PromptModifierOptions
-            modifiers={modifiers}
-            setModifiers={setModifiers}
-          />
+          <div className="block mb-10">
+            <span className="text-gray-600 text-sm">
+              Step 2: Pick your modifiers
+            </span>
+            <PromptModifierOptions
+              modifiers={modifiers}
+              setModifiers={setModifiers}
+            />
+          </div>
 
-          <h2 className="text-xl pb-2">Optimized Prompt</h2>
-          <h1 className="text-3xl">{optimizePrompt()}</h1>
+          <div className="box-border p-4 rounded-lg bg-emerald-700">
+            <h2 className="text-xl pb-2 text-white">Optimized Prompt</h2>
+            <h1 className="text-3xl text-white select-all mb-2">
+              {optimizePrompt()}
+            </h1>
+          </div>
         </div>
       </main>
     </div>
