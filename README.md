@@ -1,8 +1,8 @@
-# DALLE-2 Prompt Tool
+# DALL-E 2 Prompt Tool
 
 ## About
 
-A webapp for optimizing DALLE-2 prompts. Inspired by [DALLE-2 Prompt Optimizer](https://www.mostrecommendedbooks.com/dalle).
+A webapp for optimizing DALL-E 2 prompts. Inspired by [DALL-E 2 Prompt Optimizer](https://www.mostrecommendedbooks.com/dalle).
 
 ## Getting Started
 
