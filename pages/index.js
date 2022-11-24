@@ -3,7 +3,7 @@ import { useState } from "react";
 import PromptModifierOptions from "../components/PromptModifierOptions";
 import * as libmodifiers from "../lib/modifiers";
 import { PromptInput } from "../components/PromptInput";
-import { Header } from "../components/Header";
+import Header from "../components/Header";
 import { OptimizePrompt } from "../components/OptimizePrompt";
 
 export default function Home() {

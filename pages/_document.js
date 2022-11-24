@@ -11,7 +11,6 @@ export default function Document() {
           content="DALL-E 2 Prompt Optimizer Tool"
           key="title"
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="keywords"
           content="dalle, DALL-E 2, prompt, tool, optimizer, engineering"
