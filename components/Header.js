@@ -13,6 +13,7 @@ export default function Header() {
               <a
                 href="https://github.com/arkits/dalle-prompt-tool"
                 target="_blank"
+                rel="noreferrer"
                 className="block text-blue-700 hover:underline"
                 aria-current="github"
               >
